@@ -145,13 +145,12 @@ form h3 {
   color: #5fb2ff;
 }
 .bx-info-circle {
+  height: 20px;
   color: #5fb2ff;
   font-size: 1.25rem;
   padding-left: 10px;
   position: relative;
   user-select: none;
-  height: 20px;
-  height: 20px;
 }
 .bx-info-circle:hover ~ .popUp {
   opacity: 1;
