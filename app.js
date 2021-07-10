@@ -21,19 +21,19 @@ passVisibility.addEventListener("click", () => {
   }
 });
 
+let warning = document.getElementsByClassName("warning");
+
 //checking password if validate by length
 function validatePassword() {
-  let warning = document.getElementsByClassName("warning");
-
-  if (password.value.length < 8) {
+  if (password.value.toLowerCase() != "tdgadmin") {
     password.style = "border: 1px solid red";
 
     for (let i = 0; i < warning.length; i++) {
-      warning[i].style = "opacity: 1";
+      warning[0].style = "opacity: 1";
     }
   } else {
     for (let i = 0; i < warning.length; i++) {
-      warning[i].style = "opacity: 0";
+      warning[0].style = "opacity: 0";
     }
 
     password.style = "border: 1px solid #5fb2ff";
@@ -143,11 +143,65 @@ function closeAllSelect(elem) {
 
 document.addEventListener("click", closeAllSelect);
 
-//change content to forgot password
 let forgotPass = document.getElementById("forgotPass");
+let forgotPassForm = document.getElementById("forgot-pass-form-hide");
+let userNameField = document.getElementById("userNameField");
+let radios = document.getElementsByClassName("radios");
 
-//ak gavcherdi da minda rom forma gakres da dagaviwkdat parolis kontenti gachndes
+//hide login content and show forgot password content
 forgotPass.addEventListener("click", () => {
-  console.log(document.getElementById("form").style);
-  form.style = "opacity: 0!important, bottom: 50%!important";
+  form.classList.add("form-hide");
+  forgotPassForm.classList.add("forgot-pass-form-show");
+});
+
+forgotPassForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  //check member validation
+
+  if (userNameField.value.toLowerCase() != "tdgadmin") {
+    userNameField.style = "border: 1px solid #FD0A50; ";
+
+    for (let i = 0; i < warning.length; i++) {
+      warning[1].style = "opacity: 1";
+    }
+  } else {
+    for (let i = 0; i < warning.length; i++) {
+      warning[1].style = "opacity: 0;display:none";
+    }
+
+    userNameField.classList.add("userNameDissapear");
+
+    for (let i = 0; i < radios.length; i++) {
+      radios[0].style = "position:unset; opacity:1; transform: translate(0,0);";
+    }
+    let number = document.getElementById("number");
+    let mail = document.getElementById("mail");
+    let button = document.getElementById("next");
+    let mediaQuery = window.matchMedia("(max-width: 470px)");
+
+    forgotPassForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      if (number.checked) {
+        let smsField = document.getElementsByClassName("bySms");
+        if (mediaQuery.matches) {
+          button.style = "width: 85vw";
+        }
+        for (let i = 0; i < smsField.length; i++) {
+          radios[i].style = "position: absolute; opacity: 0;";
+
+          smsField[i].style =
+            "position: unset; opacity: 1; transform: translate(0,0) ";
+        }
+      } else if (mail.checked) {
+        let mailField = document.getElementsByClassName("byMail");
+        for (let i = 0; i < mailField.length; i++) {
+          radios[i].style = "position: absolute; opacity: 0;";
+
+          mailField[i].style =
+            "position: unset; opacity: 1; transform: translate(0,0)";
+        }
+      }
+      button.innerHTML = "შესვლა";
+    });
+  }
 });

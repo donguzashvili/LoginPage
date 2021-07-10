@@ -27,7 +27,7 @@
             placeholder="პაროლი"
             id="password"
           />
-          <p class="warning">თქვენ მიერ შეყვანილი პაროლი არასწორია</p>
+          <p class="warning">თქვენ მიერ შეყვანილი პაროლი არასწორია(tdgadmin)</p>
           <i class="bx bx-show" id="toggle-visible"></i>
           <div class="password-options">
             <div class="save-pass">
@@ -54,6 +54,48 @@
             >
           </div>
           <button>შესვლა</button>
+        </form>
+        <form id="forgot-pass-form-hide">
+          <h3 class="forgot-pass-header">დაგავიწყდა პაროლი?!</h3>
+          <input type="text" placeholder="მომხმარებელი" id="userNameField" />
+          <p class="warning">
+            თქვენ მიერ შეყვანილი მომხმარებელი არასწორია(tdgadmin)
+          </p>
+
+          <div class="radios">
+            <label for="number"
+              ><p>SMS</p>
+              <input type="radio" id="number" name="recoverType" checked />
+              <div class="shownRadio">
+                <span class="chosenRadio"></span>
+              </div>
+            </label>
+
+            <label for="mail"
+              ><p>Email</p>
+              <input type="radio" id="mail" name="recoverType" />
+              <div class="shownRadio">
+                <span class="chosenRadio"></span>
+              </div>
+            </label>
+          </div>
+          <div class="bySms">
+            <input type="text" placeholder="SMS კოდი" />
+            <i class="bx bx-info-circle"> </i>
+            <span class="popUp validation-info"
+              >პაროლი ვალიდურია სისტემიდან გამოსვლამდე, გთხოვთ შეცვალოთ
+              პაროლი</span
+            >
+          </div>
+          <div class="byMail">
+            <input type="email" placeholder="Email კოდი" />
+            <i class="bx bx-info-circle"> </i>
+            <span class="popUp validation-info"
+              >პაროლი ვალიდურია სისტემიდან გამოსვლამდე, გთხოვთ შეცვალოთ
+              პაროლი</span
+            >
+          </div>
+          <button id="next" class="nextButton">შემდეგი</button>
         </form>
       </div>
     </div>

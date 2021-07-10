@@ -90,7 +90,9 @@ form h3 {
   line-height: 25px;
   user-select: none;
 }
-
+.forgot-pass-header {
+  margin: 0;
+}
 .save-pass label {
   display: flex;
   align-items: center;
@@ -147,6 +149,7 @@ form h3 {
   font-size: 1.25rem;
   padding-left: 10px;
   position: relative;
+  user-select: none;
 }
 .bx-info-circle:hover ~ .popUp {
   opacity: 1;
@@ -155,7 +158,7 @@ form h3 {
 .popUp {
   opacity: 0;
   width: 300px;
-  background-color: #15222c;
+  background-color: rgba(21, 34, 44, 0.8);
   color: #ffffff;
   text-align: center;
   border-radius: 7px;
@@ -171,6 +174,7 @@ form h3 {
   font-weight: normal;
   font-size: 12px;
   line-height: 16px;
+  user-select: none;
 }
 
 .retrieve-option {
@@ -280,4 +284,194 @@ form {
 #form {
   opacity: 1;
   transition: all 0.3s linear;
+}
+.form-hide {
+  transform: translate(0, -300px);
+  opacity: 0 !important;
+  position: absolute;
+}
+#forgot-pass-form-hide {
+  position: absolute;
+  transform: translate(1500px, 0);
+  opacity: 0;
+  transition: all 0.5s linear;
+}
+.forgot-pass-form-show {
+  position: relative !important;
+  opacity: 1 !important;
+  transform: translate(0, 0) !important;
+}
+.radios {
+  display: flex;
+  position: absolute;
+  opacity: 0;
+  transform: translate(1500px, 0);
+  transition: all 0.5s linear;
+  margin: 35px 0;
+}
+/*radio style*/
+
+.radios label {
+  display: block;
+  position: relative;
+  padding: 0 15px;
+  cursor: pointer;
+  font-size: 22px;
+}
+.radios label p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "bgpBannerCaps";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 15px;
+  line-height: 18px;
+  padding: 0 10px;
+  color: #ffffff;
+  user-select: none;
+}
+
+.radios label input {
+  width: unset;
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+.shownRadio {
+  position: absolute;
+  top: 15px;
+  left: 0;
+  height: 15px;
+  width: 15px;
+  background-color: #15222c;
+  border-radius: 50%;
+  border: 0.5px solid #ffffff;
+}
+.radios label:hover input ~ .shownRadio {
+  border: 0.5px solid #1e88e5;
+}
+.radios label input:checked ~ .shownRadio {
+  border: 0.5px solid #1e88e5;
+  display: block;
+}
+.radios label input:checked ~ .shownRadio > .chosenRadio {
+  height: 9px;
+  width: 9px;
+  border-radius: 50%;
+  background: #1e88e5;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+}
+
+.shownRadio::after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+.radios label input {
+  display: block;
+}
+.shownRadio::after {
+  top: 9px;
+  left: 9px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: white;
+}
+/*end of radio style */
+
+.userNameDissapear {
+  position: absolute;
+  transform: translate(0, -1500px);
+  opacity: 0;
+  transition: all 0.4s linear;
+}
+#userNameField {
+  margin: 30px 0 0 0;
+}
+.bySms {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  opacity: 0;
+  transform: translate(1500px, 0px);
+}
+.byMail {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  opacity: 0;
+  transform: translate(1500px, 0px);
+}
+.validation-info {
+  left: 40%;
+  bottom: 84px;
+}
+
+/* media querys */
+@media screen and (max-width: 1050px) {
+  .main-wrapper {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .logo {
+    display: none;
+  }
+  hr {
+    display: none;
+  }
+}
+@media screen and (max-width: 535px) {
+  .popUp {
+    top: 50%;
+    left: 100%;
+  }
+  .bx-info-circle:hover ~ .popUp {
+    left: 15%;
+  }
+  .bx-info-circle:hover ~ .validation-info {
+    left: 24%;
+  }
+  .validation-info {
+    top: unset;
+  }
+}
+@media screen and (max-width: 470px) {
+  form {
+    padding: 5px;
+  }
+  form input {
+    width: 95vw;
+  }
+  form button {
+    width: 95vw;
+  }
+  .bySms input {
+    width: 85vw;
+  }
+  .byMail input {
+    width: 85vw;
+  }
+  .bx-show {
+    top: 188px;
+    right: 16px;
+  }
+}
+@media screen and (max-width: 385px) {
+  .password-options {
+    flex-flow: column;
+  }
+  .save-pass {
+    margin-bottom: 10px;
+  }
+  .warning {
+    text-align: center;
+  }
+  .bx-show {
+    right: 8%;
+  }
 }
