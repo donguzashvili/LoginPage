@@ -150,6 +150,8 @@ form h3 {
   padding-left: 10px;
   position: relative;
   user-select: none;
+  height: 20px;
+  height: 20px;
 }
 .bx-info-circle:hover ~ .popUp {
   opacity: 1;
@@ -201,11 +203,16 @@ form {
 }
 .bx-show {
   position: absolute;
+  height: 15px;
+  width: 18px;
   right: 12px;
   top: 183px;
   color: white;
   font-size: 1.25rem;
   cursor: pointer;
+}
+.bx-show path {
+  stroke: #ffffff;
 }
 
 /* styiling select */
@@ -363,8 +370,8 @@ form {
   border-radius: 50%;
   background: #1e88e5;
   position: absolute;
-  top: 2px;
-  left: 2px;
+  top: 2.5px;
+  left: 2.5px;
 }
 
 .shownRadio::after {

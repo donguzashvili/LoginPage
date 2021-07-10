@@ -10,13 +10,21 @@ window.onload = () => {
 
 let passVisibility = document.getElementById("toggle-visible");
 let password = document.getElementById("password");
+let eye = document.getElementsByClassName("eye-path");
 
 //toggle password visibility
 passVisibility.addEventListener("click", () => {
   //checking password type
   if (password.type === "password") {
+    for (let i = 0; i < eye.length; i++) {
+      eye[i].style = "stroke: #5FB2FF";
+    }
     password.type = "text";
+    passVisibility.style = "color: #5FB2FF";
   } else {
+    for (let i = 0; i < eye.length; i++) {
+      eye[i].style = "stroke: #FFFFFF";
+    }
     password.type = "password";
   }
 });
@@ -58,7 +66,7 @@ for (let i = 0; i < defaultSelect.length; i++) {
   div.innerHTML = elem.options[elem.selectedIndex].innerHTML;
   defaultSelect[i].appendChild(div);
 
-  //For each element, create div new DIV that will contain the option list
+  //For each element, create div that will contain the option list
   let newElem = document.createElement("DIV");
   newElem.setAttribute("class", "select-items hide");
   for (let j = 0; j < elem.length; j++) {
