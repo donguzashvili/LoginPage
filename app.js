@@ -63,13 +63,13 @@ for (let i = 0; i < defaultSelect.length; i++) {
   newElem.setAttribute("class", "select-items hide");
   for (let j = 0; j < elem.length; j++) {
     /* For each option in the original select element,
-    create div new DIV that will act as an option item: */
+    create div that will act as an option item */
 
     let newDiv = document.createElement("DIV");
     newDiv.innerHTML = elem.options[j].innerHTML;
     newDiv.addEventListener("click", function (e) {
       /* When an item is clicked, update the original select box,
-        and the selected item: */
+        and the selected item */
 
       let grandParent =
         this.parentNode.parentNode.getElementsByTagName("select")[0];
@@ -174,6 +174,8 @@ forgotPassForm.addEventListener("submit", (e) => {
     for (let i = 0; i < radios.length; i++) {
       radios[0].style = "position:unset; opacity:1; transform: translate(0,0);";
     }
+
+    //on submit show next content
     let number = document.getElementById("number");
     let mail = document.getElementById("mail");
     let button = document.getElementById("next");
