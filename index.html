@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style/style.css" />
+    <title>callapp</title>
+  </head>
+  <body>
+    <div class="main-wrapper">
+      <div class="logo">
+        <img id="logoImg" src="./style/img/logo.png" alt="" />
+      </div>
+      <hr />
+      <div class="login">
+        <form id="form">
+          <h3>სისტემაში შესვლა</h3>
+          <input type="text" placeholder="მომხმარებელი" />
+          <input
+            id="password"
+            type="password"
+            placeholder="პაროლი"
+            id="password"
+          />
+          <p class="warning">თქვენ მიერ შეყვანილი პაროლი არასწორია</p>
+          <i class="bx bx-show" id="toggle-visible"></i>
+          <div class="password-options">
+            <div class="save-pass">
+              <label for="savePass">
+                <input type="checkbox" id="savePass" />
+                <p>დაიმახსოვრე პაროლი</p>
+              </label>
+            </div>
+            <a id="forgotPass" href="#">დაგავიწყდა პაროლი</a>
+          </div>
+          <div class="retrieve-option">
+            <div class="select">
+              <select>
+                <option value="number">ნომერი</option>
+                <option value="mail">მეილი</option>
+              </select>
+            </div>
+
+            <i class="bx bx-info-circle"> </i>
+            <span class="popUp"
+              >შიდა ნომრის არჩევა სავალდებულოა თანამშრომლებისთვის, რომლებმაც
+              უნდა მიიღონ და შინაარსობრივად დაამუშაონ სატელეფონო
+              მომართვები</span
+            >
+          </div>
+          <button>შესვლა</button>
+        </form>
+      </div>
+    </div>
+    <script src="./app.js"></script>
+  </body>
+</html>
